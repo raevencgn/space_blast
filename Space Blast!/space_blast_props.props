@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>C:\Users\Raeven\Documents\Visual Studio 2015\Projects\Space Blast!\lib\SDL2-devel-2.0.5-VC\SDL2-2.0.5\include;C:\Users\Raeven\Documents\Visual Studio 2015\Projects\Space Blast!\lib\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\include;C:\Users\Raeven\Documents\Visual Studio 2015\Projects\Space Blast!\lib\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Raeven\Documents\Visual Studio 2015\Projects\Space Blast!\lib\SDL2-devel-2.0.5-VC\SDL2-2.0.5\lib\x86;C:\Users\Raeven\Documents\Visual Studio 2015\Projects\Space Blast!\lib\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\lib\x86;C:\Users\Raeven\Documents\Visual Studio 2015\Projects\Space Blast!\lib\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
