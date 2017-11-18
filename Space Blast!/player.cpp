@@ -11,6 +11,8 @@ Player::Player(Texture* texture, std::vector<SDL_Rect> clip, int col_rad, int li
 	m_col_rad = col_rad;
 	m_frame = 2;
 	m_lives = lives;
+	m_invul = false;
+	m_invul_ticks = 0;
 	m_pos_x = pos_x;
 	m_pos_y = pos_y;
 	m_ang = ang;
@@ -131,6 +133,20 @@ void Player::inc_vel_ang(double d_vel_ang)
 	m_vel_ang += d_vel_ang;
 }
 
+void Player::inc_invul_ticks()
+{
+	printf("m_invul_ticks: %d\n", m_invul_ticks);
+	if (m_invul_ticks < 50)
+	{
+		m_invul_ticks++;
+	}
+	else
+	{
+		m_invul_ticks = 0;
+		m_invul = false;
+	}
+}
+
 void Player::dec_vel_x(double d_vel_x)
 {
 	if (m_vel_x != 0)
@@ -149,6 +165,11 @@ void Player::dec_vel_y(double d_vel_y)
 
 		m_vel_y = abs(m_vel_y) - abs(d_vel_y) >= 0 ? m_vel_y - sign * abs(d_vel_y) : 0;
 	}
+}
+
+bool Player::is_invul()
+{
+	return m_invul;
 }
 
 double Player::get_pos_x()
@@ -219,4 +240,9 @@ void Player::set_vel_ang(double vel_ang)
 int Player::get_lives()
 {
 	return m_lives;
+}
+
+void Player::set_invul()
+{
+	m_invul = true;
 }

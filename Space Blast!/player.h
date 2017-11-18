@@ -16,6 +16,8 @@ class Player
 		// Used for animating the player's explosion
 		int m_frame;
 		int m_lives;
+		bool m_invul;
+		int m_invul_ticks;
 		double m_pos_x;
 		double m_pos_y;
 		double m_ang;
@@ -33,8 +35,10 @@ class Player
 		void inc_vel_x(double d_vel_x);
 		void inc_vel_y(double d_vel_y);
 		void inc_vel_ang(double d_vel_ang);
+		void inc_invul_ticks();
 		void dec_vel_x(double d_vel_x);
 		void dec_vel_y(double d_vel_y);
+		bool is_invul();
 		double get_pos_x();
 		double get_pos_y();
 		double get_center_x();
@@ -49,6 +53,7 @@ class Player
 		void set_vel_y(double vel_y);
 		void set_vel_ang(double vel_ang);
 		void set_ang(double ang);
+		void set_invul();
 };
 
 #endif

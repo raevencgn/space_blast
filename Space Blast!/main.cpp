@@ -333,10 +333,16 @@ int main(int argc, char** argv)
 				{
 					for (int i = 0; i < int(aliens.size()); i++)
 					{
-						if (is_collision(int(aliens[i]->get_center_x()), int(aliens[i]->get_center_y()), aliens[i]->get_col_rad(), int(player.get_center_x()), int(player.get_center_y()), player.get_col_rad()) && aliens[i]->is_alive())
+						if (is_collision(int(aliens[i]->get_center_x()), int(aliens[i]->get_center_y()), aliens[i]->get_col_rad(), int(player.get_center_x()), int(player.get_center_y()), player.get_col_rad()) && aliens[i]->is_alive() && !player.is_invul())
 						{
 							player.kill();
 							aliens[i]->kill();
+
+							// Make the player invulnerable if he's not already dead
+							if (player.get_lives() > 0)
+							{
+								player.set_invul();
+							}
 						}
 					}
 				}
@@ -430,6 +436,12 @@ int main(int argc, char** argv)
 				if (player.get_lives() == 0 && player.is_done_exploding())
 				{
 					state = GAME_OVER;
+				}
+
+				// Check if the player is invulnerable and increment counter
+				if (player.is_invul())
+				{
+					player.inc_invul_ticks();
 				}
 			}
 			else if (state == PAUSED)
