@@ -116,6 +116,8 @@ void Player::reset(int screen_width, int screen_height)
 	m_vel_x = 0;
 	m_vel_y = 0;
 	m_vel_ang = 0;
+	m_invul = false;
+	m_invul_ticks = 0;
 }
 
 void Player::inc_vel_x(double d_vel_x)
