@@ -137,7 +137,6 @@ void Player::inc_vel_ang(double d_vel_ang)
 
 void Player::inc_invul_ticks()
 {
-	printf("m_invul_ticks: %d\n", m_invul_ticks);
 	if (m_invul_ticks < 50)
 	{
 		m_invul_ticks++;
